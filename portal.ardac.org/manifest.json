@@ -163,7 +163,7 @@
             },
             "args": [
               "--NotebookApp.base_url=/lw-workspace/proxy/",
-	      "--NotebookApp.shutdown_no_activity_timeout=5400",
+	            "--NotebookApp.shutdown_no_activity_timeout=5400",
               "--NotebookApp.password=''",
               "--NotebookApp.token=''"
             ],
@@ -193,7 +193,7 @@
           },
           "args": [
             "--NotebookApp.base_url=/lw-workspace/proxy/",
-	    "--NotebookApp.shutdown_no_activity_timeout=5400",
+	          "--NotebookApp.shutdown_no_activity_timeout=5400",
             "--NotebookApp.password=''",
             "--NotebookApp.token=''"
           ],
@@ -223,7 +223,7 @@
           },
           "args": [
             "--NotebookApp.base_url=/lw-workspace/proxy/",
-	    "--NotebookApp.shutdown_no_activity_timeout=5400",
+	          "--NotebookApp.shutdown_no_activity_timeout=5400",
             "--NotebookApp.password=''",
             "--NotebookApp.token=''"
           ],
