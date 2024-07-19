@@ -15,17 +15,17 @@
       "peregrine": "quay.io/cdis/peregrine:2023.09",
       "revproxy": "quay.io/cdis/nginx:2023.09",
       "sheepdog": "quay.io/cdis/sheepdog:2023.09",
-      "portal": "quay.io/cdis/data-portal:2023.09",
-      "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+      "portal": "742378880825.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:latest",
+      "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.16.3-debian-cloudwatch-2.1",
       "spark": "quay.io/cdis/gen3-spark:2023.09",
-      "tube": "quay.io/cdis/tube:2023.09",
-      "guppy": "quay.io/cdis/guppy:2023.09",
+      "tube": "quay.io/cdis/tube:2023.12",
+      "guppy": "quay.io/cdis/guppy:2023.12",
       "sower": "quay.io/cdis/sower:2023.09",
       "hatchery": "quay.io/cdis/hatchery:2023.09",
       "ambassador": "quay.io/datawire/ambassador:1.4.2",
       "wts": "quay.io/cdis/workspace-token-service:2023.09",
       "manifestservice": "quay.io/cdis/manifestservice:2023.09",
-      "metadata": "quay.io/cdis/metadata-service:2023.09",
+      "metadata": "quay.io/cdis/metadata-service:2023.12",
       "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2023.09"
     },
     "arborist": {
@@ -132,8 +132,8 @@
           "memory-limit": "256Mi",
           "image": "quay.io/cdis/gen3fuse-sidecar:2023.09",
           "env": {
-            "NAMESPACE": "<environment>",
-            "HOSTNAME": "<environment_fqdn>"
+            "NAMESPACE": "portal",
+            "HOSTNAME": "portal.ardac.org"
           },
           "args": [
 
@@ -163,6 +163,7 @@
             },
             "args": [
               "--NotebookApp.base_url=/lw-workspace/proxy/",
+	            "--NotebookApp.shutdown_no_activity_timeout=5400",
               "--NotebookApp.password=''",
               "--NotebookApp.token=''"
             ],
@@ -192,6 +193,7 @@
           },
           "args": [
             "--NotebookApp.base_url=/lw-workspace/proxy/",
+	          "--NotebookApp.shutdown_no_activity_timeout=5400",
             "--NotebookApp.password=''",
             "--NotebookApp.token=''"
           ],
@@ -221,6 +223,7 @@
           },
           "args": [
             "--NotebookApp.base_url=/lw-workspace/proxy/",
+	          "--NotebookApp.shutdown_no_activity_timeout=5400",
             "--NotebookApp.password=''",
             "--NotebookApp.token=''"
           ],
@@ -242,6 +245,7 @@
       ]
     },
     "global": {
+      "es7": true,
       "environment": "ardac-portal",
       "hostname": "portal.ardac.org",
       "revproxy_arn": "arn:aws:acm:us-east-1:742378880825:certificate/d994f88e-a06b-4244-8bd1-946074c54079",
